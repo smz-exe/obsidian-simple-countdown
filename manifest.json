@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-simple-countdown",
-	"name": "Simple Countdown",
-	"version": "1.0.0",
-	"minAppVersion": "0.15.0",
-	"description": "A simple countdown pane for your event.",
-	"author": "Yuki Shimizu",
-	"authorUrl": "https://github.com/smz-exe",
-	"isDesktopOnly": false
+  "id": "simple-countdown",
+  "name": "Simple Countdown",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "A simple countdown pane for your event.",
+  "author": "Yuki Shimizu",
+  "authorUrl": "https://github.com/smz-exe",
+  "isDesktopOnly": false
 }
