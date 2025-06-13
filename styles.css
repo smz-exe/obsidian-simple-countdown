@@ -1,8 +1,64 @@
-/*
+.countdown-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  gap: 4px;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+/* Primary elements */
+.countdown-days {
+  font-size: 3.2em;
+  font-weight: 600;
+  color: var(--text-normal);
+  line-height: 1;
+  margin-bottom: 4px;
+}
 
-If your plugin does not need CSS, delete this file.
+.countdown-label {
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.countdown-event {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--text-normal);
+  margin-bottom: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
 
-*/
+.countdown-error {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--text-error);
+  margin-bottom: 8px;
+}
+
+.countdown-date-footer {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: var(--text-faint);
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+.setting-error-message {
+  color: var(--text-error);
+  font-size: 0.75em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-style: italic;
+  display: none;
+  width: 100%;
+  clear: both;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
