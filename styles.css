@@ -62,3 +62,7 @@
   box-sizing: border-box;
   padding-left: 4px;
 }
+
+.setting-error-message.visible {
+  display: block;
+}

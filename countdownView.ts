@@ -43,11 +43,16 @@ export class CountdownView extends ItemView {
     const now = new Date();
     const targetDate = new Date(this.plugin.settings.targetDate + 'T00:00:00');
 
+    // Clear existing content
+    this.countdownEl.empty();
+
     if (isNaN(targetDate.getTime())) {
-      this.countdownEl.innerHTML = `
-        <div class="countdown-error">Invalid date format</div>
-        <div class="countdown-event">${this.plugin.settings.eventName}</div>
-      `;
+      // Create error elements using DOM API
+      const errorEl = this.countdownEl.createDiv({ cls: 'countdown-error' });
+      errorEl.textContent = 'Invalid date format';
+      
+      const eventEl = this.countdownEl.createDiv({ cls: 'countdown-event' });
+      eventEl.textContent = this.plugin.settings.eventName;
       return;
     }
 
@@ -71,16 +76,21 @@ export class CountdownView extends ItemView {
       labelText = Math.abs(diffDays) === 1 ? 'day ago' : 'days ago';
       showDateFooter = true;
     }
-    const dateFooterHtml = showDateFooter
-      ? `<div class="countdown-date-footer">${this.plugin.settings.targetDate}</div>`
-      : '';
 
-    this.countdownEl.innerHTML = `
-      <div class="countdown-days">${displayText}</div>
-      <div class="countdown-label">${labelText}</div>
-      <div class="countdown-event">${this.plugin.settings.eventName}</div>
-      ${dateFooterHtml}
-    `;
+    // Create elements using DOM API
+    const daysEl = this.countdownEl.createDiv({ cls: 'countdown-days' });
+    daysEl.textContent = displayText;
+
+    const labelEl = this.countdownEl.createDiv({ cls: 'countdown-label' });
+    labelEl.textContent = labelText;
+
+    const eventEl = this.countdownEl.createDiv({ cls: 'countdown-event' });
+    eventEl.textContent = this.plugin.settings.eventName;
+
+    if (showDateFooter) {
+      const dateFooterEl = this.countdownEl.createDiv({ cls: 'countdown-date-footer' });
+      dateFooterEl.textContent = this.plugin.settings.targetDate;
+    }
   }
 
   async onClose() {

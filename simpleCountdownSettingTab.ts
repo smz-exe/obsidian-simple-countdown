@@ -23,13 +23,13 @@ export class SimpleCountdownSettingTab extends PluginSettingTab {
   private showErrorMessage(message: string): void {
     if (this.errorMessageEl) {
       this.errorMessageEl.textContent = message;
-      this.errorMessageEl.style.display = 'block';
+      this.errorMessageEl.addClass('visible');
     }
   }
 
   private clearErrorMessage(): void {
     if (this.errorMessageEl) {
-      this.errorMessageEl.style.display = 'none';
+      this.errorMessageEl.removeClass('visible');
       this.errorMessageEl.textContent = '';
     }
   }
