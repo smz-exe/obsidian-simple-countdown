@@ -50,7 +50,7 @@ export class CountdownView extends ItemView {
       // Create error elements using DOM API
       const errorEl = this.countdownEl.createDiv({ cls: 'countdown-error' });
       errorEl.textContent = 'Invalid date format';
-      
+
       const eventEl = this.countdownEl.createDiv({ cls: 'countdown-event' });
       eventEl.textContent = this.plugin.settings.eventName;
       return;
@@ -88,7 +88,9 @@ export class CountdownView extends ItemView {
     eventEl.textContent = this.plugin.settings.eventName;
 
     if (showDateFooter) {
-      const dateFooterEl = this.countdownEl.createDiv({ cls: 'countdown-date-footer' });
+      const dateFooterEl = this.countdownEl.createDiv({
+        cls: 'countdown-date-footer',
+      });
       dateFooterEl.textContent = this.plugin.settings.targetDate;
     }
   }
